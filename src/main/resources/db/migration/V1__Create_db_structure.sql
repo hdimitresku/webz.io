@@ -1,0 +1,21 @@
+-- CREATE TABLE users
+-- (
+--     id            SERIAL PRIMARY KEY,
+--     full_name     VARCHAR(255)        NOT NULL,
+--     address       TEXT,
+--     email      VARCHAR(100) UNIQUE NOT NULL,
+--     password      VARCHAR(255)        NOT NULL,
+--     is_publisher   BOOLEAN NOT NULL,
+--     created_at    TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+-- );
+--
+-- CREATE TABLE garment (
+--                          id SERIAL PRIMARY KEY,              -- Unique ID for the garment
+--                          type VARCHAR(50) NOT NULL,          -- Type of garment (e.g., shirt, pants)
+--                          description TEXT,                   -- Description of the garment
+--                          publisher_id INT NOT NULL,          -- Foreign key linking to the publisher
+--                          size VARCHAR(10) NOT NULL,          -- Size of the garment (e.g., S, M, L, XL)
+--                          price NUMERIC(10, 2) NOT NULL,      -- Price of the garment
+--                          created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- Timestamp for creation
+--                          FOREIGN KEY (publisher_id) REFERENCES users(id) -- Foreign key constraint
+-- );

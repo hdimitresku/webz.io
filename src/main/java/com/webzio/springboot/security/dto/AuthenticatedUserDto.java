@@ -6,8 +6,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 
-
-@NoArgsConstructor
+/**
+ * Data Transfer Object (DTO) for representing an authenticated user.
+ * This class is used to transfer user information, such as name, username, password, and role,
+ * between different layers of the application, especially during authentication and user validation.
+ */
 public class AuthenticatedUserDto {
 
 	private String name;

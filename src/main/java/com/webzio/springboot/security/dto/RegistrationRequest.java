@@ -7,6 +7,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+/**
+ * DTO for representing the registration request from a new user.
+ * This class contains fields for the user's full name, email, username, password, address, and publisher status.
+ * Validation annotations ensure that the required fields are provided with proper formats during the registration process.
+ */
 public class RegistrationRequest {
 
 	@NotEmpty(message = "{registration_name_not_empty}")

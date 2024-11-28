@@ -8,7 +8,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Service;
 
-
+/**
+ * Service that validates user registration details during the sign-up process.
+ * Ensures that the provided email and username are unique before completing registration.
+ */
 @Service
 public class UserValidationService {
 
@@ -20,11 +23,23 @@ public class UserValidationService {
 
 	private final ExceptionMessageAccessor exceptionMessageAccessor;
 
+	/**
+	 * Constructor to initialize the UserValidationService with required dependencies.
+	 *
+	 * @param userRepository Repository for querying user data.
+	 * @param exceptionMessageAccessor Accessor for getting exception messages.
+	 */
     public UserValidationService(UserRepository userRepository, ExceptionMessageAccessor exceptionMessageAccessor) {
         this.userRepository = userRepository;
         this.exceptionMessageAccessor = exceptionMessageAccessor;
     }
 
+	/**
+	 * Validates the registration request by checking if the email and username are unique.
+	 *
+	 * @param registrationRequest The registration request containing user details.
+	 * @throws RegistrationException if the email or username already exists in the system.
+	 */
     public void validateUser(RegistrationRequest registrationRequest) {
 
 		final String email = registrationRequest.getEmail();

@@ -6,8 +6,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 
-
-
+/**
+ * DTO for representing the login request from the user.
+ * This class contains the username and password fields used for user authentication.
+ * It also includes validation annotations to ensure the fields are not empty during the login process.
+ */
 public class LoginRequest {
 
 	@NotEmpty(message = "{login_username_not_empty}")

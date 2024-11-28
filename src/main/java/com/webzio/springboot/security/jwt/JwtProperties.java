@@ -1,10 +1,12 @@
 package com.webzio.springboot.security.jwt;
 
-import lombok.Getter;
-import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * Configuration properties for JWT authentication, including issuer, secret key, and expiration time.
+ * These properties are loaded from application configuration files.
+ */
 @Configuration
 @ConfigurationProperties(prefix = "jwt")
 public class JwtProperties {

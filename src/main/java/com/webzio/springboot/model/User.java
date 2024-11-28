@@ -4,6 +4,13 @@ import com.webzio.springboot.model.enumerators.UserRole;
 import jakarta.persistence.*;
 import lombok.*;
 
+
+/**
+ * Represents a User entity in the system.
+ * This entity stores information about a user, such as their full name, username, password,
+ * email, address, and role within the system.
+ * The class is mapped to the "users" table in the database.
+ */
 @Entity
 @Table(name = "users")
 public class User {

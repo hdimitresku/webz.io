@@ -21,7 +21,10 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import java.io.IOException;
 import java.util.Objects;
 
-
+/**
+ * Filter that processes incoming HTTP requests, extracts JWT tokens from the authorization header,
+ * and validates the token to authenticate the user.
+ */
 @Service
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
@@ -30,11 +33,26 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 	private static final Logger logger = LogManager.getLogger(JwtAuthenticationFilter.class);
 	private final UserDetailsServiceImpl userDetailsService;
 
+	/**
+	 * Constructor to initialize the JWT authentication filter with dependencies.
+	 *
+	 * @param jwtTokenManager The token manager for validating JWT tokens.
+	 * @param userDetailsService Service for loading user details.
+	 */
     public JwtAuthenticationFilter(JwtTokenManager jwtTokenManager, UserDetailsServiceImpl userDetailsService) {
         this.jwtTokenManager = jwtTokenManager;
         this.userDetailsService = userDetailsService;
     }
 
+	/**
+	 * Extracts the JWT token from the request header and authenticates the user if the token is valid.
+	 *
+	 * @param request The HttpServletRequest containing the token in the header.
+	 * @param response The HttpServletResponse where authentication success or failure will be processed.
+	 * @param chain The filter chain to continue the processing of the request.
+	 * @throws IOException If an input error occurs while processing the request.
+	 * @throws ServletException If a servlet-related error occurs.
+	 */
     @Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
 			throws IOException, ServletException {

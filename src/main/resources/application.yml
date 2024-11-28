@@ -16,11 +16,6 @@ spring:
   jta:
     enabled: false
 
-flyway:
-  enabled: true
-  baseline-on-migrate: true
-  locations: classpath:db/migration
-
 springdoc:
   show-actuator: true
 
@@ -40,7 +35,6 @@ logging:
     org.springframework: INFO
     com.webzio.springboot: INFO
 
-## FIXME : Customize JWT token and Swagger information for your application
 
 jwt:
   secretKey: supersecretjwtkey
@@ -49,7 +43,7 @@ jwt:
 swagger:
   contact-name: Harallamb Dimitresku
   contact-mail: hdimitresku@gmail.com
-  app-name: Spring Boot Boilerplate Project
-  app-version: 3.3.1
+  app-name: Webz.io
+  app-version: 1.0.0
   app-license-url: https://www.apache.org/licenses/LICENSE-2.0.html
   app-license: Apache 2.0

@@ -9,15 +9,11 @@
         <version>3.3.1</version>
     </parent>
 
-    <groupId>com.webzio</groupId>
-    <artifactId>springboot-boilerplate</artifactId>
+    <groupId>com.webz.io</groupId>
+    <artifactId>webz.io</artifactId>
     <version>3.3.6</version>
 
-    <name>spring-boot-boilerplate</name>
-    <description>
-        Spring Boot Boilerplate is a starter kit.
-        This project includes : Spring Boot(3.3.1), Spring Data JPA, Spring Validation, Spring Security + JWT Token, PostgreSQL, Mapstruct, Lombok, Swagger (Open API)
-    </description>
+    <name>Webz.io</name>
     <properties>
 
         <java.version>17</java.version>
@@ -44,9 +40,9 @@
 
         <!-- Log4j2 Core -->
         <dependency>
-        <groupId>org.apache.logging.log4j</groupId>
-        <artifactId>log4j-core</artifactId>
-        <version>2.20.0</version> <!-- Use the latest version -->
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.20.0</version> <!-- Use the latest version -->
         </dependency>
 
         <dependency>
@@ -85,13 +81,6 @@
             <artifactId>java-jwt</artifactId>
             <version>${jwt.version}</version>
         </dependency>
-
-        <dependency>
-            <groupId>org.flywaydb</groupId>
-            <artifactId>flyway-database-postgresql</artifactId>
-            <version>10.15.0</version>
-        </dependency>
-
 
         <dependency>
             <groupId>org.postgresql</groupId>

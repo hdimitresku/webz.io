@@ -14,7 +14,10 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.stereotype.Service;
 
-
+/**
+ * Service that handles the generation of JWT tokens during user login.
+ * It authenticates the user, generates the JWT token upon successful login, and returns the token in the response.
+ */
 @Service
 public class JwtTokenService {
 
@@ -24,12 +27,26 @@ public class JwtTokenService {
 
 	private final AuthenticationManager authenticationManager;
 
+	/**
+	 * Constructor to initialize the JwtTokenService with the required dependencies.
+	 *
+	 * @param userService Service for retrieving user details.
+	 * @param jwtTokenManager The manager responsible for creating and validating JWT tokens.
+	 * @param authenticationManager The manager for authenticating users.
+	 */
     public JwtTokenService(UserService userService, JwtTokenManager jwtTokenManager, AuthenticationManager authenticationManager) {
         this.userService = userService;
         this.jwtTokenManager = jwtTokenManager;
         this.authenticationManager = authenticationManager;
     }
 
+	/**
+	 * Authenticates the user using the provided login credentials and generates a JWT token upon successful authentication.
+	 * The token is returned in a LoginResponse DTO.
+	 *
+	 * @param loginRequest Contains the user's username and password for authentication.
+	 * @return A LoginResponse DTO containing the generated JWT token.
+	 */
     public LoginResponse getLoginResponse(LoginRequest loginRequest) {
 
 		final String username = loginRequest.getUsername();

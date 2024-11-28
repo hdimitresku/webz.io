@@ -8,6 +8,14 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
+/**
+ * Represents a Garment entity in the system.
+ * This entity is used to store information about a garment being sold or published in the marketplace.
+ * A garment is associated with a publisher (user) and contains details such as the garment type,
+ * size, description, price, and creation date.
+ *
+ * The class is mapped to the "garment" table in the database.
+ */
 @Entity
 @Table(name = "garment")
 public class Garment {
